@@ -96,8 +96,8 @@ Class Participation                |   10   |    10%   |
 | Nov. 20  | Th  |   Overlapping Generations Models             |        |
 | Nov. 25  | T   | No class, Thanksgiving      |  |
 | Nov. 27  | Th   | No class, Thanksgiving     |  |
-| Dec. 2   | T   |   Deep Nets in DPPs   |       PS # 8 |
-| Dec. 4   | Th   | Deep Nets in DPPs     | PS # 9       |
+| Dec. 2   | T   |   Deep Nets in DPPs   |       [PS # 8](https://github.com/jdebacker/CompEcon_Fall25/blob/main/DynamicProgramming/PS8.pdf) |
+| Dec. 4   | Th   | Deep Nets in DPPs     | [PS # 9](https://github.com/jdebacker/CompEcon_Fall25/blob/main/OverlappingGenerations/PS9.pdf)       |
 |          |     |                                     |        |
 | Dec. 11  | Th   | No Final Exam - **final project due**         |  [Final Project](https://github.com/jdebacker/CompEcon_Fall25/blob/main/FinalProject.pdf) |
 
