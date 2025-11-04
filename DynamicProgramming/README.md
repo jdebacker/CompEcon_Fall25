@@ -23,7 +23,10 @@ This module of the course illustrates computational methods to solve continuous 
 * Cooper and Ejarque, "Financial frictions and investment: requiem in Q" (\emph{RED}, 2003). [Link](https://www.sciencedirect.com/science/article/pii/S1094202503000644)
 * Gourieroux, Monfort, and Renault, "Indirect inference" (\emph{Journal of Applied Econometrics}, 1993). [Link](https://www.jstor.org/stable/2285076)
 
-## 4. Useful Links
+## 4. Problem Set
+* Problem Set 8: [PDF](https://github.com/jdebacker/CompEcon_Fall25/blob/main/DynamicProgramming/PS8.pdf)
+
+## 5. Useful Links
 * [Numba](http://numba.pydata.org)
 * [Dask](https://dask.org)
 * [QuantEcon: Finite Markov Chains](https://lectures.quantecon.org/jl/finite_markov.html)
