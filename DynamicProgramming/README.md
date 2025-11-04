@@ -18,7 +18,12 @@ This module of the course illustrates computational methods to solve continuous 
 * [Discrete choice cake eating problem](https://github.com/jdebacker/CompEcon_Fall25/blob/main/DynamicProgramming/CakeDiscrete.ipynb)
 
 
-## 3. Useful Links
+## 3. Papers
+* Carroll (2006), "The method of endogenous gridpoints for solving dynamic stochastic optimization problems" (\emph{Economics Letters}, 2006). [Link](https://pages.stern.nyu.edu/~dbackus/Computation/Carroll%20endog%20grid%20EL%2006.pdf)
+* Cooper and Ejarque, "Financial frictions and investment: requiem in Q" (\emph{RED}, 2003). [Link](https://www.sciencedirect.com/science/article/pii/S1094202503000644)
+* Gourieroux, Monfort, and Renault, "Indirect inference" (\emph{Journal of Applied Econometrics}, 1993). [Link](https://www.jstor.org/stable/2285076)
+
+## 4. Useful Links
 * [Numba](http://numba.pydata.org)
 * [Dask](https://dask.org)
 * [QuantEcon: Finite Markov Chains](https://lectures.quantecon.org/jl/finite_markov.html)
