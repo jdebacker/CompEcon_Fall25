@@ -38,6 +38,9 @@ dependencies:
 - pip
 - pip:
   - pygam
+  - shap
+  - torch
+  - torcheval
   - linecheck
   - memory-profiler
   - plotly-express
