@@ -117,8 +117,73 @@ These notebooks used to be Python-specific, and were therefore called iPython no
 Jupyter notebooks capability will be automatically installed with your download of the [Anaconda distribution](https://www.anaconda.com/download/) of Python. If you did not download the Anaconda distribution of Python, you can download Jupyter notebooks separately by following the instructions on the Jupyter [install page](http://jupyter.org/install).
 
 
+## 8. Using Research Computing at USC
 
-## 8. Useful Links
+The first step is to reach out to [Research Computing at USC](https://sc.edu/about/offices_and_divisions/division_of_information_technology/rc/index.php) and request an account.  Once you have an account, you can log in to the cluster using a secure shell (ssh) client from your terminal.  You can also use a secure copy (scp) client to transfer files to and from the cluster from your terminal or a FTP client such as [FileZilla](https://filezilla-project.org/).
+
+The research computing clusters use a job scheduling system called [SLURM](https://slurm.schedmd.com/documentation.html) to manage the allocation of computing resources.  You will need to write batch scripts to submit jobs to the cluster.  Once you have written a batch script, you can submit it to the cluster using the `sbatch <filename.sh>` command from your terminal.
+
+The following is an example of a simple SLURM batch script that requests The job will run a Python script called `simulations.py` located in the directory `./SimulationCode`.
+
+```bash
+#!/bin/bash
+# set the job name
+#SBATCH --job-name=nature-aging-sensitivity
+
+# set file to send output to
+#SBATCH --output=nature-aging-sensitivity-%j.out
+#SBATCH --error=nature-aging-sensitivity-%j.err
+
+# set partition
+#SBATCH -p defq  # partition name
+
+# Set time
+#SBATCH --time=48:00:00  # 48 hours is the max
+
+# Set resources
+#SBATCH --ntasks=5  # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1 # cpu-cores per task
+#SBATCH --nodes=1  # total number of nodes
+#SBATCH --mem=64G  # total memory per node (4 GB per cpu-core is default)
+
+# Add account info
+#SBATCH --account=rc_general
+
+###########Load modules and enter code below
+
+module load python3/anaconda/
+
+# Initialize conda for this shell session
+eval "$(conda shell.bash hook)"
+
+# Create and activate Conda environment
+conda activate macro-aging-env
+
+# Run simulations
+cd SimulationCode
+python simulation.py hi_low_parameterizations.json
+```
+
+I haven't had great success with Dask on Research Computing at USC, but if you want to try it out, here is an example of how I specified the Dask client in `simulations.py`:
+
+```python
+num_workers = int(
+    os.environ.get("SLURM_NTASKS", 5)
+)  # fallback to 5 if not found
+threads_per_worker = int(os.environ.get("SLURM_CPUS_PER_TASK", 1))
+
+# Create local cluster using SLURM allocation
+cluster = LocalCluster(
+    n_workers=num_workers,
+    threads_per_worker=threads_per_worker,
+    memory_limit="64GB",  # Adjust based on your 64GB total / 5 workers
+    processes=True,
+)
+client = Client(cluster)
+print("Number of workers = ", num_workers)
+```
+
+## 9. Useful Links
 
 * [Code and Data for the Social Sciences](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)
 * [LaTeX math symbols](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
