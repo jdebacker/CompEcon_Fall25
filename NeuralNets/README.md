@@ -5,6 +5,7 @@ This module of the course covers the basics of neural networks and their applica
 
 * [Slides on Neural Networks for Economists](https://github.com/jdebacker/CompEcon_Fall25/blob/main/NeuralNets/NN_Intro_slides.pdf)
 * [Prediction in a Regression Problem](https://github.com/jdebacker/CompEcon_Fall25/blob/main/NeuralNets/NN_prediction.ipynb)
+* [Using NN to solve a DPP](https://github.com/jdebacker/CompEcon_Fall25/blob/main/NeuralNets/NN_DPP.ipynb)
 
 ## 2. Examples of research using neural networks in economics
  * ["Machine learning for high-dimensional dynamic stochastic economies"](https://www.sciencedirect.com/science/article/abs/pii/S1877750318306161?via\%3Dihub)
